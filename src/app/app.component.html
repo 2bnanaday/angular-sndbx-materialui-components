@@ -1,4 +1,14 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<app-toolbar [appName]="appName"></app-toolbar>
+
+<mat-button-toggle-group aria-label="Contact List">
+  <mat-button-toggle value="">List Contact</mat-button-toggle>
+  <mat-button-toggle value="">Add Contact</mat-button-toggle>
+</mat-button-toggle-group>
+
+<mat-card>
+  <app-contact-list></app-contact-list>
+</mat-card>
+
+<mat-card>
+  <app-add-contact></app-add-contact>
+</mat-card>
