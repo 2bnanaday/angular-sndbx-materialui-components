@@ -1,14 +1,16 @@
 <app-toolbar [appName]="appName"></app-toolbar>
 
+
+
 <mat-button-toggle-group aria-label="Contact List">
-  <mat-button-toggle value="">List Contact</mat-button-toggle>
-  <mat-button-toggle value="">Add Contact</mat-button-toggle>
+  <mat-button-toggle (click)="toggleEditor('contact-list')">Contact List</mat-button-toggle>
+  <mat-button-toggle (click)="toggleEditor('add-contact')">Add Contact</mat-button-toggle>
 </mat-button-toggle-group>
 
-<mat-card>
+<mat-card *ngIf="showListContact">
   <app-contact-list></app-contact-list>
 </mat-card>
 
-<mat-card>
+<mat-card *ngIf="showAddContact">
   <app-add-contact></app-add-contact>
 </mat-card>
