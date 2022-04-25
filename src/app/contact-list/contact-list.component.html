@@ -1,6 +1,13 @@
 <mat-card *ngFor="let contact of contacts" class="contact-card">
   <mat-card-header>
-    <!-- <div mat-card-avatar class="contact-header-image"></div> -->
+    <div
+      mat-card-avatar
+      [ngStyle]="{
+        'background-image':
+          'url(https://github.com/2bnanaday/angular-sndbx-materialui-components/blob/master/src/assets/img/' + contact.fName + contact.lName + '.jpg?raw=true)'
+      }"
+      class="contact-header-image"
+    ></div>
     <mat-card-title>{{ contact.fName }} {{ contact.lName }}</mat-card-title>
     <mat-card-subtitle>{{ contact.phoneNumber }}</mat-card-subtitle>
   </mat-card-header>
