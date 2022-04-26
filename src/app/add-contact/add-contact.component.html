@@ -1,21 +1,72 @@
 <form class="example-form" fxLayout="column" fxLayoutAlign="space-evenly start">
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>First name</mat-label>
-    <input matInput placeholder="" value="" />
-  </mat-form-field>
+  <mat-card>
+    Required
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>First name</mat-label>
+            <input
+              matInput
+              [formControl]="fNameFormControl"
+              placeholder="Kermit"
+            />
+            <mat-error
+              *ngIf="
+                fNameFormControl.hasError('email') &&
+                !fNameFormControl.hasError('required')
+              "
+            >
+              Please enter a Muppet's first name
+            </mat-error>
+            <mat-error *ngIf="fNameFormControl.hasError('required')">
+              First name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Last name</mat-label>
+            <input
+              matInput
+              [formControl]="fNameFormControl"
+              placeholder="Frog"
+            />
+            <mat-error
+              *ngIf="
+                lNameFormControl.hasError('email') &&
+                !lNameFormControl.hasError('required')
+              "
+            >
+              Please enter a a Muppet's last name
+            </mat-error>
+            <mat-error *ngIf="fNameFormControl.hasError('required')">
+              Last name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
 
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Last name</mat-label>
-    <input matInput placeholder="" value="" />
-  </mat-form-field>
+    Other Optional Info
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="kfrog@muppets.com" value="" />
+    </mat-form-field>
 
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Phone Number</mat-label>
-    <input matInput placeholder="" value="" />
-  </mat-form-field>
+<mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>Phone Number</mat-label>
+  <input matInput placeholder="" value="" />
+</mat-form-field>
 
-  <mat-card-actions>
-    <button mat-raised-button color="primary">Add</button>
-    <button mat-button>Cancel</button>
-  </mat-card-actions>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Avatar URL</mat-label>
+      <input matInput placeholder="" value="" />
+    </mat-form-field>
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary">Add</button>
+      <button mat-button>Cancel</button>
+    </mat-card-actions>
+  </mat-card>
 </form>

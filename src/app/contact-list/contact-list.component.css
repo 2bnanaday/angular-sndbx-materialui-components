@@ -1,8 +1,3 @@
 mat-card {
   margin: 5px;
 }
-
-.contact-header-image {
-  /* background-image: url('https://github.com/2bnanaday/angular-sndbx-materialui-components/blob/master/src/assets/img/misspiggy.jpg?raw=true'); */
-  background-size: cover;
-}

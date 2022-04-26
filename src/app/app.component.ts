@@ -9,7 +9,7 @@ export type EditorType = 'contact-list' | 'add-contact';
 })
 export class AppComponent {
   // appName: string = 'Angular ' + VERSION.full;
-  appName: string = 'Contact Manager';
+  appName: string = 'Muppets Contact Manager';
 
   editor: EditorType = 'contact-list';
 
@@ -24,5 +24,4 @@ export class AppComponent {
   toggleEditor(type: EditorType) {
     this.editor = type;
   }
-
 }

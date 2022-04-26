@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //material (is there a way to condense this down into one line?)
 import { MatCommonModule } from '@angular/material/core';
@@ -29,6 +29,7 @@ import { AddContactComponent } from './add-contact/add-contact.component';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     MatCommonModule,
     MatButtonToggleModule,
     MatCardModule,
