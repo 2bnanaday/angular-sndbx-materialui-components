@@ -24,8 +24,6 @@ import { HelloComponent } from './hello.component';
 import { ContactListComponent } from './contact-list/contact-list.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { AddContactComponent } from './add-contact/add-contact.component';
-import { EditContactComponent } from './edit-contact/edit-contact.component';
-import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   imports: [
@@ -50,8 +48,6 @@ import { ContactComponent } from './contact/contact.component';
     ContactListComponent,
     ToolbarComponent,
     AddContactComponent,
-    EditContactComponent,
-    ContactComponent,
   ],
   bootstrap: [AppComponent],
 })
