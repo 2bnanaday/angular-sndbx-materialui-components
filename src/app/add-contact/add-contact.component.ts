@@ -11,11 +11,11 @@ import { ContactService } from '../contact.service';
 export class AddContactComponent implements OnInit {
   fNameFormControl = new FormControl('', [
     Validators.required,
-    Validators.email,
+    Validators.minLength(1),
   ]);
   lNameFormControl = new FormControl('', [
     Validators.required,
-    Validators.email,
+    Validators.minLength(1),
   ]);
 
   contactList: Contact[] = [];
@@ -29,7 +29,8 @@ export class AddContactComponent implements OnInit {
   constructor(private ctService: ContactService) {}
 
   ngOnInit() {
-    this.contactList = this.ctService.CONTACTS;
+    //no longer need, was used for local array, using db instead
+    // this.contactList = this.ctService.CONTACTS;
   }
 
   addNewContact() {
@@ -41,6 +42,11 @@ export class AddContactComponent implements OnInit {
       email: this.cEmail,
       avatarUrl: this.cAvatarUrl,
     };
-    this.contactList.push(newContact);
+    // no longer need this, was initially used to push data locally to array, using db instead
+    // this.contactList.push(newContact);
+
+    this.ctService.addContact(newContact).subscribe((data) => {
+      console.log(data);
+    });
   }
 }
