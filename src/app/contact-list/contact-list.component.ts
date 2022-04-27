@@ -9,28 +9,10 @@ import { ContactService } from '../contact.service';
 })
 export class ContactListComponent implements OnInit {
   contactList: Contact[] = [];
-  nextID: number = 0;
-  cfName: string;
-  clName: string;
-  cPhone: string;
-  cEmail: string;
-  cAvatarUrl: string;
 
-  constructor(private ctService: ContactService) {}
+  constructor(private cService: ContactService) {}
 
   ngOnInit() {
-    this.contactList = this.ctService.CONTACTS;
-  }
-
-  addNewContact() {
-    const newContact: Contact = {
-      id: ++this.nextID,
-      fName: this.cfName,
-      lName: this.clName,
-      phoneNumber: this.cPhone,
-      email: this.cEmail,
-      avatarUrl: this.cAvatarUrl,
-    };
-    this.contactList.push(newContact);
+    this.contactList = this.cService.CONTACTS;
   }
 }

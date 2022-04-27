@@ -7,9 +7,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditContactComponent implements OnInit {
 
-  constructor() { }
+  contactList: Contact[] = [];
+  nextID: number = 0;
+  cfName: string;
+  clName: string;
+  cPhone: string;
+  cEmail: string;
+  cAvatarUrl: string;
+
+  constructor(private ctService: ContactService) {}
 
   ngOnInit() {
+    this.contactList = this.ctService.CONTACTS;
+  }
+
+  addNewContact() {
+    const newContact: Contact = {
+      id: ++this.nextID,
+      fName: this.cfName,
+      lName: this.clName,
+      phoneNumber: this.cPhone,
+      email: this.cEmail,
+      avatarUrl: this.cAvatarUrl,
+    };
+    this.contactList.push(newContact);
   }
 
 }
