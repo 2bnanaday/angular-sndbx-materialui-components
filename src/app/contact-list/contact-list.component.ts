@@ -13,6 +13,13 @@ export class ContactListComponent implements OnInit {
   constructor(private cService: ContactService) {}
 
   ngOnInit() {
-    this.contactList = this.cService.CONTACTS;
+    // this.contactList = this.cService.CONTACTS;
+    // this.fetchData();
+  }
+
+  fetchData() {
+    this.cService.getContacts().subscribe((data) => {
+      this.contactList = data;
+    });
   }
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Contact } from './model/contact';
 import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -42,6 +43,27 @@ export class ContactService {
     return this.http.post(
       'https://muppetsdb-default-rtdb.firebaseio.com/' + 'muppet.json',
       newMuppet
+    );
+  }
+
+  getContacts() {
+    return (
+      this.http
+        //the diamond bracket sytnax...casting the object that the get method returns into an array
+        .get<Contact[]>(
+          'https://muppetsdb-default-rtdb.firebaseio.com/' + 'muppet.json'
+        )
+
+        //using 'pipe' function to transform from JSON object to an array
+        .pipe(
+          map((responseData) => {
+            const contactList: Contact[] = [];
+
+            //remember, responseData is just the observerble object that the get method returns
+            for (const key in responseData) contactList.push(responseData[key]);
+            return contactList;
+          })
+        )
     );
   }
 }
