@@ -8,6 +8,7 @@
             <mat-label>First name</mat-label>
             <input
               matInput
+              [(ngModel)]="cfName"
               [formControl]="fNameFormControl"
               placeholder="Kermit"
             />
@@ -29,6 +30,7 @@
             <mat-label>Last name</mat-label>
             <input
               matInput
+              [(ngModel)]="clName"
               [formControl]="fNameFormControl"
               placeholder="Frog"
             />
@@ -51,17 +53,22 @@
     Other Optional Info
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Email</mat-label>
-      <input matInput placeholder="kfrog@muppets.com" value="" />
+      <input
+        matInput
+        placeholder="kfrog@muppets.com"
+        value=""
+        [(ngModel)]="cEmail"
+      />
     </mat-form-field>
 
-<mat-form-field class="example-full-width" appearance="fill">
-  <mat-label>Phone Number</mat-label>
-  <input matInput placeholder="" value="" />
-</mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Phone Number</mat-label>
+      <input matInput [(ngModel)]="cPhone" />
+    </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Avatar URL</mat-label>
-      <input matInput placeholder="" value="" />
+      <input matInput [(ngModel)]="cAvatarUrl" />
     </mat-form-field>
 
     <mat-card-actions>
