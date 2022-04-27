@@ -14,7 +14,7 @@ export class ContactListComponent implements OnInit {
 
   ngOnInit() {
     // this.contactList = this.cService.CONTACTS;
-    // this.fetchData();
+    this.fetchData();
   }
 
   fetchData() {
