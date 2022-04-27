@@ -1,5 +1,6 @@
 export const contacts: any = [
   {
+    id: 1,
     fName: 'miss',
     lName: 'piggy',
     phoneNumber: '701-xxx-xxxx',
@@ -8,6 +9,7 @@ export const contacts: any = [
       'https://github.com/2bnanaday/angular-sndbx-materialui-components/blob/master/src/assets/img/misspiggy.jpg?raw=true',
   },
   {
+    id: 2,
     fName: 'kermit',
     lName: 'frog',
     phoneNumber: '701-xxx-xxxx',
@@ -16,6 +18,7 @@ export const contacts: any = [
       'https://github.com/2bnanaday/angular-sndbx-materialui-components/blob/master/src/assets/img/kermitfrog.jpg?raw=true',
   },
   {
+    id: 3,
     fName: 'countvon',
     lName: 'count',
     phoneNumber: '701-xxx-xxxx',
