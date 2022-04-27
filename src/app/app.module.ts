@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 //material (is there a way to condense this down into one line?)
 import { MatCommonModule } from '@angular/material/core';
@@ -41,6 +42,7 @@ import { AddContactComponent } from './add-contact/add-contact.component';
     MatButtonModule,
     MatInputModule,
     BrowserAnimationsModule,
+    HttpClientModule,
   ],
   declarations: [
     AppComponent,
